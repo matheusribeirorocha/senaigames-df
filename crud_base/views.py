@@ -7,4 +7,4 @@ def criar_usuario(request):
     # ruquest - requisição
     # template - html e entre outros
     # context - objetos(python, python com banco de dados)
-    return render(request,'crud_base/usuario_lead.html')
+    return render(request,'marketplace/index.html')

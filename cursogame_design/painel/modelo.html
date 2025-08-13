@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Inclusivo: IA e Libras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e6e6e6;
+        }
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .hero-section {
+            /*background-image: url('https://placehold.co/1920x1080/1a202c/e2e8f0?');*/
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.8), rgba(126, 34, 206, 0.8), rgba(217, 70, 239, 0.8));
+            mix-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Hero Section -->
+    <header class="hero-section text-center py-20 md:py-48 flex items-center justify-center">
+        <div class="gradient-overlay"></div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold orbitron text-white drop-shadow-lg">
+                Bem-vindo ao Jogo que Transforma!
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl font-light max-w-2xl mx-auto">
+                Uma experiência ousada que une <span class="font-bold">Acessibilidade em Libras</span>, <span class="font-bold">Inteligência Artificial</span> e <span class="font-bold">Estatística</span> para um mundo mais inclusivo.
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#" class="bg-violet-600 hover:bg-violet-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 orbitron">
+                    Explorar
+                </a>
+                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-violet-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 orbitron">
+                    Saber Mais
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- Feature 1: GDD -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-blue-400">Elaboração do Game Design Document</h2>
+                    <p class="mt-4 text-gray-300">
+                        A base do nosso jogo é o <span class="font-bold">Game Design Document (GDD)</span>, um documento vivo que define a lógica, a mecânica e os aspectos narrativos. Ele garante que a experiência seja consistente e coesa, com um foco claro em design de produto.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <!-- Placeholder de uma imagem relacionada ao GDD -->
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=GDD" alt="Representação visual de um Game Design Document" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Feature 2: Acessibilidade em Libras -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row-reverse items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-indigo-400">Acessibilidade com Engenharia de Prompt</h2>
+                    <p class="mt-4 text-gray-300">
+                        Para garantir a acessibilidade em Libras, utilizamos <span class="font-bold">Prompt Engineering Reverso</span>. Essa técnica nos permite otimizar a IA para criar traduções precisas e contextuais, tornando a experiência de jogo totalmente acessível para a comunidade surda.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <!-- Placeholder de uma animação de IA de Libras -->
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Animação+de+Libras+aqui" alt="Representação visual de uma animação de Libras" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 3: Inteligência Artificial -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-purple-400">IA com Few-Shot Prompting</h2>
+                    <p class="mt-4 text-gray-300">
+                        Nossa IA se adapta ao seu estilo de jogo graças ao <span class="font-bold">Few-Shot Prompting</span>. Usando poucos exemplos, o modelo aprende a criar desafios personalizados e dinâmicos, garantindo que o jogo seja sempre inovador e envolvente para cada jogador.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <!-- Placeholder de uma animação de IA -->
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Representação+de+IA" alt="Representação visual de uma interface de IA" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 4: Estatística -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row-reverse items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-pink-400">Métricas e Estatísticas Poderosas</h2>
+                    <p class="mt-4 text-gray-300">
+                        Mergulhe fundo nos dados do jogo. Nossas ferramentas de estatística permitem que você analise seu desempenho, compare com outros jogadores e entenda a fundo a mecânica do jogo, tornando-o um estrategista de verdade. A cada avanço, os dados são apresentados em gráficos interativos que revelam a melhor estratégia para resolver os enigmas do Cerrado. Você precisará aplicar seus conhecimentos em <span class="font-bold">Estatística Descritiva</span> e <span class="font-bold">Probabilidade</span> para triunfar!
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <!-- Placeholder de um gráfico ou visualização de dados -->
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Gráficos+do+Jogo" alt="Representação visual de gráficos do jogo" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: AI Models -->
+        <h2 class="text-center text-4xl font-bold orbitron text-white mb-10 mt-20">As IAs que nos Inspiram</h2>
+
+        <!-- Card: ChatGPT -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-green-400">ChatGPT</h2>
+                    <p class="mt-4 text-gray-300">
+                        O ChatGPT da OpenAI é uma referência em modelos de linguagem. Sua capacidade de gerar texto e interagir de forma conversacional foi uma inspiração para a criação dos diálogos e da narrativa dinâmica do nosso jogo.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=ChatGPT" alt="Representação visual do ChatGPT" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card: Maritaca -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row-reverse items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-yellow-400">Maritaca</h2>
+                    <p class="mt-4 text-gray-300">
+                        A Maritaca, uma IA brasileira, demonstra o poder da inovação local. Ela nos inspira a desenvolver soluções tecnológicas adaptadas às necessidades e à cultura do nosso próprio país, incluindo a tradução para Libras.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Maritaca" alt="Representação visual da Maritaca" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card: Gemini -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-cyan-400">Gemini</h2>
+                    <p class="mt-4 text-gray-300">
+                        O modelo multimodal Gemini da Google nos mostra o potencial de processar e entender diferentes tipos de dados. Essa capacidade de integrar texto, imagens e outros elementos é fundamental para a experiência visual e narrativa do nosso jogo.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Gemini" alt="Representação visual do Gemini" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card: Manus -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row-reverse items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-orange-400">Manus</h2>
+                    <p class="mt-4 text-gray-300">
+                        A Manus, com seu foco em modelos de linguagem de ponta e inovação em IA, é um exemplo da pesquisa avançada que impulsiona o campo. Seu trabalho nos inspira a buscar a excelência em engenharia e otimização para a IA do jogo.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Manus" alt="Representação visual da Manus" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card: NotebookLM -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-teal-400">Notebook LM</h2>
+                    <p class="mt-4 text-gray-300">
+                        O NotebookLM nos mostra como uma IA pode se tornar uma assistente de pesquisa e escrita, sendo uma ferramenta valiosa para a documentação e elaboração de conteúdo. Ele é uma inspiração para as ferramentas de GDD e estatística do nosso jogo.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Notebook+LM" alt="Representação visual do Notebook LM" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card: Grok -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row-reverse items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-amber-400">Grok</h2>
+                    <p class="mt-4 text-gray-300">
+                        Com seu estilo único e abordagem "ousada", o Grok nos lembra que a IA pode ter uma personalidade. Isso nos inspirou a dar ao nosso jogo um toque de humor e uma voz distinta, tornando a experiência ainda mais memorável.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Grok" alt="Representação visual do Grok" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card: Le Chat -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl p-8 shadow-xl">
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold orbitron text-rose-400">Le Chat</h2>
+                    <p class="mt-4 text-gray-300">
+                        A plataforma de IA Le Chat, com sua interface amigável e foco na usabilidade, inspira o design da nossa interface de usuário. Queremos que a interação com a IA do nosso jogo seja tão natural e intuitiva quanto uma conversa.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500 text-2xl font-bold orbitron animate-pulse">
+                        <img src="https://placehold.co/600x400/374151/9ca3af?text=Le+Chat" alt="Representação visual do Le Chat" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center py-8">
+        <p class="text-gray-400">
+            © 2025 Seu Jogo. Todos os direitos reservados.
+        </p>
+    </footer>
+
+</body>
+</html>

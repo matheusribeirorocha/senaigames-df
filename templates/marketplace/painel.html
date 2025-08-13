@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Odyssey - Apresentação do Jogo</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Orbitron para títulos, Roboto para texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Estilos Customizados -->
+    <style>
+        /* --- Configurações Globais e Tema Escuro --- */
+        :root {
+            --primary-dark: #0a0a14;
+            --secondary-dark: #1a1a2e;
+            --accent-purple: #6c63ff;
+            --accent-cyan: #00d4ff;
+            --accent-pink: #ff006e;
+            --accent-green: #00ff88;
+            --text-light: #e8e8f0;
+            --text-secondary: #a8a8c0;
+            --glow-purple: rgba(108, 99, 255, 0.4);
+            --glow-cyan: rgba(0, 212, 255, 0.4);
+            --glow-pink: rgba(255, 0, 110, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, #0f0f1f 100%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Partículas de fundo animadas */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, var(--accent-cyan), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--accent-purple), transparent),
+                radial-gradient(1px 1px at 90px 40px, var(--accent-pink), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--accent-green), transparent);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: particleFloat 20s linear infinite;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-100px) translateX(50px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+
+        /* --- Tipografia com Estilo Gamer --- */
+        h1, h2, h3, h4, h5, h6, .display-4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--glow-cyan), 0 0 20px var(--glow-cyan), 0 0 30px var(--glow-cyan);
+            letter-spacing: 2px;
+        }
+        
+        .text-glow {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px var(--glow-cyan));
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* --- Animações e Transições --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .fade-in-section {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease-out forwards;
+        }
+        
+        /* --- Header --- */
+        .header-logos {
+            padding: 1.5rem 0;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(0, 212, 255, 0.2));
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(108, 99, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-logos img {
+            max-height: 50px;
+            filter: brightness(1.2) contrast(1.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-logos img:hover {
+            filter: brightness(1.5) contrast(1.3);
+            transform: scale(1.05);
+        }
+
+        /* --- Seção Hero --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1rem;
+            background: 
+                linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(0, 212, 255, 0.1) 50%, rgba(255, 0, 110, 0.1) 100%),
+                radial-gradient(ellipse at center, rgba(108, 99, 255, 0.2) 0%, transparent 70%),
+                url('https://placehold.co/800x100/0a0a14/FFFFFF?text=Calango+Neural') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+            animation: scanLine 4s linear infinite;
+        }
+
+        @keyframes scanLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .hero .display-4 {
+            font-size: calc(3rem + 4vw);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle {
+            font-size: calc(1.5rem + 1vw);
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1.5px;
+            text-shadow: none;
+        }
+
+        .slogan {
+            font-size: calc(1rem + 0.5vw);
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .btn-glow {
+            background: linear-gradient(45deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan));
+            background-size: 200% 200%;
+            border: 2px solid transparent;
+            color: #fff;
+            padding: 18px 40px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: 
+                0 0 20px var(--glow-pink),
+                0 0 40px var(--glow-purple),
+                0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 3s ease-in-out infinite;
+            letter-spacing: 1px;
+        }
+
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 
+                0 0 30px var(--glow-pink),
+                0 0 60px var(--glow-purple),
+                0 15px 50px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+        }
+
+        .btn-glow:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* --- Seção Marketplace (Cards) --- */
+        .marketplace-section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .marketplace-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(108, 99, 255, 0.05) 50%, transparent 100%);
+            z-index: -1;
+        }
+
+        .card-tech {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(108, 99, 255, 0.1) 50%, 
+                rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid rgba(108, 99, 255, 0.3);
+            border-radius: 20px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-tech::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .card-tech:hover::before {
+            left: 100%;
+        }
+        
+        .card-tech:hover {
+            transform: translateY(-20px) scale(1.02);
+            border-color: var(--accent-cyan);
+            box-shadow: 
+                0 0 30px var(--glow-cyan),
+                0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-tech .card-img-top {
+            border-bottom: 2px solid rgba(108, 99, 255, 0.3);
+            transition: all 0.3s ease;
+            filter: brightness(0.8) contrast(1.2);
+        }
+        
+        .card-tech:hover .card-img-top {
+            border-color: var(--accent-cyan);
+            filter: brightness(1) contrast(1.3);
+        }
+
+        .card-tech .card-body {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-tech .card-title {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-tech .icon {
+            font-size: 5rem;
+            background: linear-gradient(45deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 15px var(--glow-pink));
+            transition: all 0.4s ease;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .card-tech:hover .icon {
+            transform: scale(1.3) rotate(-15deg);
+            filter: drop-shadow(0 0 25px var(--glow-cyan));
+            animation: none;
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* --- Rodapé --- */
+        .footer-tech {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            padding: 3rem 0;
+            border-top: 2px solid rgba(108, 99, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-tech::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan), var(--accent-green));
+            animation: rainbowFlow 3s linear infinite;
+        }
+
+        @keyframes rainbowFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .footer-tech .social-icons a {
+            color: var(--text-secondary);
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+        
+        .footer-tech .social-icons a:hover {
+            color: var(--accent-cyan);
+            transform: translateY(-5px) scale(1.2);
+            filter: drop-shadow(0 0 15px var(--glow-cyan));
+        }
+
+        /* Responsividade aprimorada */
+        @media (max-width: 768px) {
+            .hero .display-4 {
+                font-size: calc(2rem + 3vw);
+            }
+            
+            .btn-glow {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .card-tech .icon {
+                font-size: 4rem;
+            }
+        }
+
+        /* Efeitos de loading */
+        .loading-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Seção 1: Header (Cabeçalho) -->
+    <header class="header-logos sticky-top">
+        <div class="container d-flex justify-content-center align-items-center gap-4">
+            <!-- Placeholder para o logo do Brasília Mais TI -->
+            <img src="/galeria\branca-2.png" alt="Logo Brasília Mais TI" class="slide-in-left">
+            <!-- Placeholder para o logo do SENAI -->
+            <img src="/galeria\SENAI_sem_assinatura_cor.png-300x76.png" alt="Logo SENAI" class="slide-in-right">
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção 2: Hero (Destaque Principal) -->
+        <section id="hero" class="hero">
+            <div class="container fade-in-section">
+                <h1 class="display-4"><span class="text-glow"></span></h1>
+                
+                <p class="slogan">Onde a realidade é apenas o começo da jornada</p>
+                <a href="#marketplace" class="btn btn-glow mt-3">Descobrir o Jogo</a>
+            </div>
+        </section>
+
+        <!-- Seção 3: Galeria de Cards (Estilo Marketplace) -->
+        <section id="marketplace" class="marketplace-section">
+            <div class="container">
+                <div class="text-center mb-5 fade-in-section">
+                    <h2>Conheça o Universo</h2>
+                    <p class="lead" style="color: var(--text-secondary); font-size: 1.3rem;">Explore os elementos que tornam Cyber Odyssey único.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- Card 1: Personagem Principal -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="animation-delay: 0.2s;">
+                        <div class="card card-tech text-center w-100">
+                            <img src="https://placehold.co/400x300/1a1a2e/6c63ff?text=Kaira,+a+Renegada" class="card-img-top" alt="Personagem Principal Kaira">
+                            <div class="card-body">
+                                <h5 class="card-title">Personagem Principal</h5>
+                                <p class="card-text">Kaira, uma hacker renegada com implantes cibernéticos, busca a verdade nas sombras de uma metrópole neon.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Funcionalidade Inovadora -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="animation-delay: 0.4s;">
+                        <div class="card card-tech text-center w-100">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <i class="ph-brain icon mx-auto mb-3"></i>
+                                <h5 class="card-title">Hackeamento Neural</h5>
+                                <p class="card-text">Invada a mente dos inimigos, controle drones e manipule o ambiente em tempo real com uma mecânica de hacking inovadora.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Tecnologia Utilizada -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="animation-delay: 0.6s;">
+                        <div class="card card-tech text-center w-100">
+                             <div class="card-body d-flex flex-column justify-content-center">
+                                <i class="ph-game-controller icon mx-auto mb-3"></i>
+                                <h5 class="card-title">Engine Gráfica</h5>
+                                <p class="card-text">Construído na Unreal Engine 5, o jogo oferece visuais de última geração com Ray Tracing e cenários dinâmicos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Cenário -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="animation-delay: 0.8s;">
+                        <div class="card card-tech text-center w-100">
+                            <img src="https://placehold.co/400x300/1a1a2e/00d4ff?text=Neo-Veridia" class="card-img-top" alt="Cenário do Jogo Neo-Veridia">
+                            <div class="card-body">
+                                <h5 class="card-title">O Cenário</h5>
+                                <p class="card-text">Explore Neo-Veridia, uma cidade vertical onde corporações gigantescas controlam tudo, das ruas chuvosas aos arranha-céus brilhantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Seção 4: Rodapé -->
+    <footer class="footer-tech text-center">
+        <div class="container">
+            <p class="mb-2" style="color: var(--text-light); font-size: 1.1rem;">&copy; 2024 Equipe de Desenvolvimento de Jogos - SENAI DF. Todos os direitos reservados.</p>
+            <p style="color: var(--text-secondary); font-size: 1rem;">Um projeto apresentado no evento Brasília Mais TI.</p>
+            <div class="social-icons mt-4">
+                <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+                <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#" aria-label="Twitch"><i class="ph ph-twitch-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script aprimorado para animações
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-section');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observa todas as seções
+        document.querySelectorAll('.marketplace-section, .footer-tech, .card-tech').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Efeito de parallax suave no scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
