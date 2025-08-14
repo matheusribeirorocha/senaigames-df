@@ -20,10 +20,35 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <!-- Estilos Customizados -->
+    <style>
+        .text-glow {
+            color: #00ffff;
+            /* Ciano vibrante */
+            text-shadow: 0 0 4px #00ffff, 0 0 8px #00ffff, 0 0 12px #00ffff;
+        }
 
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.5;
+            /* ajuste o brilho/transparência */
+        }
 
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
     </style>
-
 
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
@@ -34,15 +59,19 @@
     <header class="header-logos sticky-top">
         <div class="container d-flex justify-content-center align-items-center gap-4">
             <!-- Placeholder para o logo do Brasília Mais TI -->
-            <img src="{% static 'assets/fotos/brasilia.png' %}" alt="Logo Brasília Mais TI">
+            <img src="{% static 'assets/img/brasilia.png' %}" alt="Logo Brasília Mais TI">
             <!-- Placeholder para o logo do SENAI -->
-            <img src="{% static 'assets/fotos/senai.png' %}" alt="Logo SENAI">
+            <img src="{% static 'assets/img/senai.png' %}" alt="Logo SENAI">
         </div>
     </header>
 
     <main>
         <!-- Seção 2: Hero (Destaque Principal) -->
         <section id="hero" class="hero">
+            <video class="bg-video" autoplay loop muted playsinline>
+                <source src="{% static 'static\assets\videos\WhatsApp-Video-2025-08-14-at-16.15.44.webm' %}" type="video/webm">
+                Seu navegador não suporta vídeo em webm.
+            </video>
             <div class="container fade-in-section">
                 <h1 class="display-4"><span class="text-glow">Candango</span> Neural Ascensiony</h1>
                 <p class="slogan my-4">Onde a realidade é apenas o começo da jornada.</p>
@@ -166,16 +195,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const speakersData = [
-                { img: 'https://i.imgur.com/gX1z3Jc.png', name: 'Carlos Jacobino Lima', title: 'Presidente do Sinfor/DF' },
-                { img: 'https://i.imgur.com/pLPmU3w.png', name: 'Lucia Soares', title: 'Vice-Presidente Executiva do Sinfor/DF' },
-                { img: 'https://i.imgur.com/5h8A6yA.png', name: 'Heyrovsky Torres', title: 'Advogado, Autor e Palestrante Internacional' },
-                { img: 'https://i.imgur.com/rP6x8gY.png', name: 'Renato Riella', title: 'Marketing Político e Empresarial' },
-                { img: 'https://i.imgur.com/9C0yY9b.png', name: 'Cristina Boner Leo', title: 'Presidente do Conselho Administrativo da Globalweb' },
-                { img: 'https://i.imgur.com/F3P5R7d.png', name: 'Dora Gomes', title: '&nbsp;' },
-                { img: 'https://i.imgur.com/9z3D2J8.png', name: 'Bruna Boner', title: '&nbsp;' },
-                { img: 'https://i.imgur.com/mX7P9yL.png', name: 'Mayana Ramos', title: '&nbsp;' },
-                { img: 'https://i.imgur.com/1q8yH1W.png', name: 'Aline D\'Alessandro', title: '&nbsp;' },
-                { img: 'https://i.imgur.com/cE5eJ7V.png', name: 'Eduardo Telles Palmeira', title: '&nbsp;' }
+                { img: '{% static "assets/img/aluno1.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno2.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno3.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno4.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno5.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno6.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno7.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno8.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno9.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
+                { img: '{% static "assets/img/aluno10.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' }
             ];
 
             const carousel = document.getElementById('speakersCarousel');

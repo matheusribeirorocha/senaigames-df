@@ -56,8 +56,7 @@
             justify-content: center;
             text-align: center;
             padding: 4rem 1rem;
-            background: linear-gradient(180deg, rgba(13, 13, 26, 0) 0%, #0d0d1a 90%), 
-                        url('https://placehold.co/1920x1080/000000/FFFFFF?text=Fundo+Abstrato+Tecnol%C3%B3gico') no-repeat center center;
+            background: linear-gradient(180deg, rgba(13, 13, 26, 0) 0%, #0d0d1a 90%);
             background-size: cover;
         }
         

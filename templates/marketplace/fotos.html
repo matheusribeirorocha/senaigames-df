@@ -120,12 +120,16 @@
 
     <h1 class="main-title">A PRATA DA CASA</h1>
 
-   
+    <div class="carousel-wrapper" id="speakersCarousel">
+        <div class="speakers-carousel">
+            <!-- Os cards dos palestrantes serão inseridos aqui pelo JavaScript -->
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const speakersData = [
-                { img: 'https://i.imgur.com/gX1z3Jc.png', name: 'Carlos Jacobino Lima', title: 'Presidente do Sinfor/DF' },
+                { img: '{% static "assets/img/aluno1.jpeg" %}', name: 'Matheus Ribeiro', title: 'Python Developer' },
                 { img: 'https://i.imgur.com/pLPmU3w.png', name: 'Lucia Soares', title: 'Vice-Presidente Executiva do Sinfor/DF' },
                 { img: 'https://i.imgur.com/5h8A6yA.png', name: 'Heyrovsky Torres', title: 'Advogado, Autor e Palestrante Internacional' },
                 { img: 'https://i.imgur.com/rP6x8gY.png', name: 'Renato Riella', title: 'Marketing Político e Empresarial' },
@@ -134,7 +138,8 @@
                 { img: 'https://i.imgur.com/9z3D2J8.png', name: 'Bruna Boner', title: '&nbsp;' },
                 { img: 'https://i.imgur.com/mX7P9yL.png', name: 'Mayana Ramos', title: '&nbsp;' },
                 { img: 'https://i.imgur.com/1q8yH1W.png', name: 'Aline D\'Alessandro', title: '&nbsp;' },
-                { img: 'https://i.imgur.com/cE5eJ7V.png', name: 'Eduardo Telles Palmeira', title: '&nbsp;' }
+                { img: 'https://i.imgur.com/cE5eJ7V.png', name: 'Eduardo Telles Palmeira', title: '&nbsp;' },
+               
             ];
 
             const carousel = document.getElementById('speakersCarousel');
