@@ -10,108 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/02.css' %}">
-    <style>
-        body {
-            background: linear-gradient(180deg, #0d0d1a 0%, #1a1a2e 100%);
-            min-height: 100vh;
-            font-family: 'Roboto', sans-serif;
-            overflow: hidden;
-        }
-        #particles-js {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .login-container {
-            max-width: 400px;
-            margin: 6vh auto;
-            background: rgba(13, 13, 26, 0.85);
-            border-radius: 20px;
-            box-shadow: 0 0 40px #00ffff55, 0 0 80px #ff00ff22;
-            padding: 2.5rem 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        .cinema-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 0 0 12px #00ffff, 0 0 24px #ff00ff;
-            letter-spacing: 2px;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            animation: fadeIn 1.2s ease;
-        }
-        .login-form label {
-            color: #00ffff;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            text-shadow: 0 0 6px #00ffff88;
-        }
-        .login-form input {
-            background: rgba(255,255,255,0.07);
-            border: 1px solid #00ffff88;
-            color: #fff;
-            font-size: 1.1rem;
-            border-radius: 10px;
-            margin-bottom: 1.2rem;
-            transition: box-shadow 0.3s;
-        }
-        .login-form input:focus {
-            box-shadow: 0 0 12px #00ffff, 0 0 24px #ff00ff;
-            outline: none;
-        }
-        .login-form .form-text {
-            color: #a0a0c0;
-            font-size: 0.95rem;
-            margin-bottom: 0.7rem;
-        }
-        .btn-cinema {
-            background: linear-gradient(90deg, #00ffff 0%, #ff00ff 100%);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
-            padding: 0.7rem 2.2rem;
-            text-transform: uppercase;
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-        .btn-cinema:hover {
-            background: linear-gradient(90deg, #ff00ff 0%, #00ffff 100%);
-            box-shadow: 0 0 30px #ff00ff, 0 0 40px #00ffff;
-        }
-        .login-container::before {
-            content: '';
-            position: absolute;
-            top: -40px; left: -40px;
-            width: 120%; height: 120%;
-            background: radial-gradient(circle, rgba(0,255,255,0.08) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .cinema-desc {
-            color: #a0a0c0;
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 2s ease;
-        }
-    </style>
+    
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="login-container">
+    <div class="container py-5">
+        <div id="particles-js"></div>
+        <div class="login-container main-content mx-auto">
         <div class="cinema-title">Acesso de Membros</div>
         <div class="cinema-desc">Entre para acessar conteúdos exclusivos do universo <span style="color:#00ffff;text-shadow:0 0 8px #00ffff;">Candango Neural Ascensiony</span>.</div>
         <form class="login-form" autocomplete="off">
@@ -124,13 +28,24 @@
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com" required>
                 <div class="form-text">Informe um e-mail válido para contato e recuperação de senha.</div>
+
             </div>
+            
+                    
             <div class="mb-3">
                 <label for="password" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required minlength="6">
                 <div class="form-text">A senha deve ter pelo menos 6 caracteres.</div>
             </div>
+            <p>ID do Gênero: {{ chave }} - Nome: {{ valor.nome }}</p>
+                        <select>
+                            {% for chave, valor in cards.items %}
+                            <option> Plataforma</option>
+                            <option> Visual Novel</option>
+                            {% endfor %}
+                        </select>
             <button type="submit" class="btn btn-cinema w-100">Entrar</button>
+            
         </form>
     </div>
     <!-- Particles.js para efeito de fundo estilo jogo -->

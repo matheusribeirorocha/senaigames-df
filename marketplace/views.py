@@ -11,4 +11,12 @@ def index(request):
     return render(request,'marketplace/index.html')
 
 def autentica_membro(request):
-    return render(request,'marketplace/sou_membro.html')    
+    dados = {
+        1: {"nome": "Visual Novel"},
+        2: {"nome": "Plataforma"},
+        3: {"nome": "Ação"}
+    }
+    return render(request,'marketplace/sou_membro.html', {"cards": dados})    
+
+
+    

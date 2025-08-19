@@ -27,15 +27,19 @@
 </head>
 
 <body>
-
+    <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
     <!-- Seção 1: Header (Cabeçalho) -->
     <header class="header-logos sticky-top">
-        <div class="container d-flex justify-content-center align-items-center gap-4">
-            <!-- Placeholder para o logo do Brasília Mais TI -->
-            <img src="{% static 'assets/img/brasilia.png' %}" alt="Logo Brasília Mais TI">
-            <!-- Placeholder para o logo do SENAI -->
-            <img src="{% static 'assets/img/senai.png' %}" alt="Logo SENAI">
-            <a href="{% url 'membro' %}">Sou Membro</a>
+    <div class="d-flex justify-content-between align-items-center w-100" style="padding-left:3vw; padding-right:3vw; margin:0;">
+            <div class="d-flex align-items-center gap-2">
+                <a href="https://www.brasiliamaisti.com.br/" target="_blank" rel="noopener">
+                    <img src="{% static 'assets/img/brasilia.png' %}" alt="Logo Brasília Mais TI" class="logo-brasilia">
+                </a>
+                <a href="https://www.sistemafibra.org.br/senai/" target="_blank" rel="noopener">
+                    <img src="{% static 'assets/img/senai.png' %}" alt="Logo SENAI" class="logo-senai">
+                </a>
+            </div>
+            <a href="{% url 'membro' %}" class="btn btn-glow btn-membro">Sou Membro</a>
         </div>
     </header>
 
@@ -152,7 +156,32 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {"value": 60, "density": {"enable": true, "value_area": 800}},
+                "color": {"value": ["#00ffff", "#ff00ff", "#ffffff"]},
+                "shape": {"type": "circle"},
+                "opacity": {"value": 0.5, "random": true},
+                "size": {"value": 4, "random": true},
+                "line_linked": {"enable": true, "distance": 120, "color": "#00ffff", "opacity": 0.3, "width": 1},
+                "move": {"enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out"}
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {"enable": true, "mode": "repulse"},
+                    "onclick": {"enable": true, "mode": "push"},
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": {"distance": 100, "duration": 0.4},
+                    "push": {"particles_nb": 4}
+                }
+            },
+            "retina_detect": true
+        });
         // Pequeno script para adicionar a classe de animação quando a seção entra na tela
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

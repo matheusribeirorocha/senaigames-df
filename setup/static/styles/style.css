@@ -1,11 +1,10 @@
-
-        /* --- Configurações Globais e Tema Escuro --- */
-        body {
-            background-color: #0d0d1a; /* Azul petróleo bem escuro */
-            color: #e0e0e0; /* Cinza claro para texto */
-            font-family: 'Roboto', sans-serif;
-            overflow-x: hidden; /* Previne scroll horizontal */
-        }
+/* --- Configurações Globais e Tema Escuro --- */
+body {
+    background-color: #0d0d1a;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
 
         /* --- Tipografia com Estilo Gamer --- */
         h1, h2, h3, h4, h5, h6, .display-4 {
@@ -38,15 +37,16 @@
             backdrop-filter: blur(5px);
         }
 
-        .header-logos img {
-            max-height: 50px; /* Altura máxima para os logos */
-            filter: grayscale(50%) contrast(150%); /* Efeito para integrar ao tema */
-            transition: filter 0.3s ease;
-        }
-        
-        .header-logos img:hover {
-            filter: grayscale(0%) contrast(100%);
-        }
+
+.header-logos img {
+    max-height: 45px;
+    filter: drop-shadow(0 0 8px #7ecbff) drop-shadow(0 0 12px #bfaaff) drop-shadow(0 0 18px #ffffff88);
+    transition: filter 0.3s;
+    background: transparent;
+}
+.header-logos img:hover {
+    filter: drop-shadow(0 0 16px #7ecbff) drop-shadow(0 0 24px #bfaaff) drop-shadow(0 0 28px #ffffffcc);
+}
 
         /* --- Seção Hero --- */
         .hero {
@@ -56,13 +56,21 @@
             justify-content: center;
             text-align: center;
             padding: 4rem 1rem;
-            background: linear-gradient(180deg, rgba(13, 13, 26, 0) 0%, #0d0d1a 90%);
+            background: none;
             background-size: cover;
         }
         
         .hero .display-4 {
-            font-size: calc(2.5rem + 3vw);
+            font-size: calc((2.5rem + 3vw) * 0.85);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             font-weight: 900;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .slogan {
@@ -72,31 +80,30 @@
         }
 
         .btn-glow {
-            background: linear-gradient(45deg, #ff00ff, #00ffff); /* Gradiente magenta para ciano */
-            border: none;
-            color: #fff;
-            padding: 15px 35px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            border-radius: 50px;
-            box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff, inset 0 0 10px rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-glow:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 40%);
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.5s ease;
-        }
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: none;
+    color: #fff;
+    padding: 13.5px 31.5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.08rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff, inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.btn-glow:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 40%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
 
         .btn-glow:hover {
             transform: translateY(-5px) scale(1.05);
@@ -264,13 +271,22 @@
             font-weight: bold;
         }
 
-        .speaker-card p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #555555;
-            line-height: 1.4;
-            height: 40px; /* Altura fixa para alinhar */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.speaker-card p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555555;
+    line-height: 1.4;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    max-width: 350px;
+    margin: 0 auto;
+    background: rgba(13,13,26,0.85);
+    border-radius: 18px;
+    box-shadow: 0 0 24px #00ffff44;
+    padding: 2.5rem 2rem;
+}
