@@ -10,5 +10,5 @@ def index(request):
     
     return render(request,'marketplace/index.html')
 
-def painel(request):
-    return render(request,'marketplace/painel.html')
+def autentica_membro(request):
+    return render(request,'marketplace/sou_membro.html')    
