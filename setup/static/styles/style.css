@@ -6,36 +6,52 @@ body {
     overflow-x: hidden;
 }
 
-        /* --- Tipografia com Estilo Gamer --- */
-        h1, h2, h3, h4, h5, h6, .display-4 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #ffffff; /* Branco puro para títulos */
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Sombra ciano sutil */
-        }
-        
-        .text-glow {
-            color: #00ffff; /* Ciano vibrante */
-            text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff, 0 0 20px #00ffff;
-        }
+/* --- Tipografia com Estilo Gamer --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-4 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Branco puro para títulos */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    /* Sombra ciano sutil */
+}
 
-        /* --- Animações e Transições --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.text-glow {
+    color: #00ffff;
+    /* Ciano vibrante */
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff, 0 0 20px #00ffff;
+}
 
-        .fade-in-section {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        /* --- Header --- */
-        .header-logos {
-            padding: 1.5rem 0;
-            background: rgba(13, 13, 26, 0.8);
-            backdrop-filter: blur(5px);
-        }
+/* --- Animações e Transições --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-section {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* --- Header --- */
+.header-logos {
+    padding: 1.5rem 0;
+    background: rgba(13, 13, 26, 0.8);
+    backdrop-filter: blur(5px);
+}
 
 
 .header-logos img {
@@ -44,42 +60,44 @@ body {
     transition: filter 0.3s;
     background: transparent;
 }
+
 .header-logos img:hover {
     filter: drop-shadow(0 0 16px #7ecbff) drop-shadow(0 0 24px #bfaaff) drop-shadow(0 0 28px #ffffffcc);
 }
 
-        /* --- Seção Hero --- */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 4rem 1rem;
-            background: none;
-            background-size: cover;
-        }
-        
-        .hero .display-4 {
-            font-size: calc((2.5rem + 3vw) * 0.85);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-weight: 900;
-            margin-left: auto;
-            margin-right: auto;
-        }
+/* --- Seção Hero --- */
+.hero {
+    min-height: 100vh;
+    /* Ocupa a altura total da tela */
+    display: flex;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 2vh 1rem 2rem;
+    position: relative;
+    /* Necessário para o z-index do canvas funcionar bem */
+    overflow: hidden;
+    /* Garante que nada saia dos limites */
+}
 
-        .slogan {
-            font-size: calc(1rem + 0.5vw);
-            color: #a0a0c0; /* Roxo claro acinzentado */
-            letter-spacing: 2px;
-        }
+.hero .display-4 {
+    font-size: calc((2.5rem + 3vw) * 0.85);
+    font-weight: 900;
+}
 
-        .btn-glow {
+/* Removemos as propriedades de flexbox daqui, pois o pai (.hero) já cuida disso */
+
+
+.slogan {
+    font-size: calc(1rem + 0.5vw);
+    color: #a0a0c0;
+    /* Roxo claro acinzentado */
+    letter-spacing: 2px;
+}
+
+.btn-glow {
     background: linear-gradient(45deg, #ff00ff, #00ffff);
     border: none;
     color: #fff;
@@ -93,6 +111,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .btn-glow:before {
     content: '';
     position: absolute;
@@ -100,176 +119,191 @@ body {
     left: 50%;
     width: 300%;
     height: 300%;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 40%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 40%);
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.5s ease;
 }
 
-        .btn-glow:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 0 25px #ff00ff, 0 0 40px #00ffff, inset 0 0 10px rgba(255, 255, 255, 0.5);
-        }
+.btn-glow:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px #ff00ff, 0 0 40px #00ffff, inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
-        .btn-glow:hover:before {
-            transform: translate(-50%, -50%) scale(1);
-        }
+.btn-glow:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+}
 
-        /* --- Seção Marketplace (Cards) --- */
-        .marketplace-section {
-            padding: 5rem 0;
-        }
+/* --- Seção Marketplace (Cards) --- */
+.marketplace-section {
+    padding: 5rem 0;
+}
 
-        .card-tech {
-            background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
-            border: 1px solid rgba(0, 255, 255, 0.2); /* Borda ciano */
-            border-radius: 15px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-        }
-        
-        .card-tech:hover {
-            transform: translateY(-15px);
-            border-color: #00ffff;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        
-        .card-tech .card-img-top {
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-            transition: border-color 0.3s ease;
-        }
-        
-        .card-tech:hover .card-img-top {
-             border-color: #00ffff;
-        }
+.card-tech {
+    background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente */
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    /* Borda ciano */
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
 
-        .card-tech .card-body {
-            padding: 1.5rem;
-        }
-        
-        .card-tech .card-title {
-            color: #00ffff; /* Título do card em ciano */
-        }
-        
-        .card-tech .icon {
-            font-size: 4rem;
-            color: #ff00ff; /* Ícone em magenta */
-            text-shadow: 0 0 10px #ff00ff;
-            transition: all 0.3s ease;
-        }
+.card-tech:hover {
+    transform: translateY(-15px);
+    border-color: #00ffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
 
-        .card-tech:hover .icon {
-            transform: scale(1.2) rotate(-10deg);
-            color: #00ffff;
-            text-shadow: 0 0 15px #00ffff;
-        }
+.card-tech .card-img-top {
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    transition: border-color 0.3s ease;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1em;
+}
 
-        /* --- Rodapé --- */
-        .footer-tech {
-            background-color: #05050a;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(0, 255, 255, 0.2);
-        }
-        
-        .footer-tech .social-icons a {
-            color: #a0a0c0;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-tech .social-icons a:hover {
-            color: #00ffff;
-            transform: translateY(-3px);
-            text-shadow: 0 0 8px #00ffff;
-        }
+.card-tech:hover .card-img-top {
+    border-color: #00ffff;
+}
 
-         /* Título Principal */
-        .main-title {
-            font-size: 2.5em;
-            color: #002147;
-            margin-bottom: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-        }
+.card-tech .card-body {
+    padding: 1.5rem;
+}
 
-        /* --- ESTILOS DO CARROSSEL --- */
+.card-tech .card-title {
+    color: #00ffff;
+    /* Título do card em ciano */
+}
 
-        /* 1. Container do Carrossel (Wrapper) */
-        .carousel-wrapper {
-            max-width: 1200px; /* Define a largura da área visível */
-            width: 90%;
-            overflow: hidden; /* Essencial: esconde os itens que estão fora da área visível */
-            position: relative;
-            /* Adiciona um gradiente nas laterais para um efeito de fade */
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
-        }
+.card-tech .icon {
+    font-size: 4rem;
+    color: #ff00ff;
+    /* Ícone em magenta */
+    text-shadow: 0 0 10px #ff00ff;
+    transition: all 0.3s ease;
+}
 
-        /* 2. Faixa do Carrossel (Track) */
-        .speakers-carousel {
-            display: flex; /* Coloca todos os itens em linha */
-            gap: 40px; /* Espaço entre os cards */
-            padding: 20px 0;
-            /* Animação */
-            animation: scroll 40s linear infinite;
-        }
+.card-tech:hover .icon {
+    transform: scale(1.2) rotate(-10deg);
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
 
-        /* 3. Pausa a animação com uma classe */
-        .carousel-wrapper:hover .speakers-carousel {
-            animation-play-state: paused;
-        }
+/* --- Rodapé --- */
+.footer-tech {
+    background-color: #05050a;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
 
-        /* 4. Animação de rolagem */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                /* Move a faixa para a esquerda. O valor é (largura do card + gap) * número de cards */
-                transform: translateX(calc((-260px * 10)));
-            }
-        }
+.footer-tech .social-icons a {
+    color: #a0a0c0;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
 
-        /* --- FIM DOS ESTILOS DO CARROSSEL --- */
+.footer-tech .social-icons a:hover {
+    color: #00ffff;
+    transform: translateY(-3px);
+    text-shadow: 0 0 8px #00ffff;
+}
+
+/* Título Principal */
+.main-title {
+    font-size: 2.5em;
+    color: #002147;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* --- ESTILOS DO CARROSSEL --- */
+
+/* 1. Container do Carrossel (Wrapper) */
+.carousel-wrapper {
+    max-width: 1200px;
+    /* Define a largura da área visível */
+    width: 90%;
+    overflow: hidden;
+    /* Essencial: esconde os itens que estão fora da área visível */
+    position: relative;
+    /* Adiciona um gradiente nas laterais para um efeito de fade */
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* 2. Faixa do Carrossel (Track) */
+.speakers-carousel {
+    display: flex;
+    /* Coloca todos os itens em linha */
+    gap: 40px;
+    /* Espaço entre os cards */
+    padding: 20px 0;
+    /* Animação */
+    animation: scroll 40s linear infinite;
+}
+
+/* 3. Pausa a animação com uma classe */
+.carousel-wrapper:hover .speakers-carousel {
+    animation-play-state: paused;
+}
+
+/* 4. Animação de rolagem */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move a faixa para a esquerda. O valor é (largura do card + gap) * número de cards */
+        transform: translateX(calc((-260px * 10)));
+    }
+}
+
+/* --- FIM DOS ESTILOS DO CARROSSEL --- */
 
 
-        /* Card Individual de Palestrante */
-        .speaker-card {
-            flex-shrink: 0; /* Impede que os cards encolham */
-            width: 220px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+/* Card Individual de Palestrante */
+.speaker-card {
+    flex-shrink: 0;
+    /* Impede que os cards encolham */
+    width: 220px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
-        .speaker-card:hover {
-            transform: translateY(-10px); /* Leve elevação no card ao passar o mouse */
-        }
+.speaker-card:hover {
+    transform: translateY(-10px);
+    /* Leve elevação no card ao passar o mouse */
+}
 
-        .speaker-card img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 6px solid #002147;
-            object-fit: cover;
-            margin-bottom: 15px;
-            background-color: #e0e0e0;
-        }
+.speaker-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #002147;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #e0e0e0;
+}
 
-        .speaker-card h3 {
-            margin: 10px 0 5px;
-            font-size: 1.1em;
-            color: #333333;
-            font-weight: bold;
-        }
+.speaker-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1em;
+    color: #333333;
+    font-weight: bold;
+}
 
 .speaker-card p {
     margin: 0;
@@ -285,8 +319,13 @@ body {
 .main-content {
     max-width: 350px;
     margin: 0 auto;
-    background: rgba(13,13,26,0.85);
+    background: rgba(13, 13, 26, 0.85);
     border-radius: 18px;
     box-shadow: 0 0 24px #00ffff44;
     padding: 2.5rem 2rem;
+}
+
+.card-img-top.maonacabeca {
+  object-position: center 60%;
+  margin-top: 20px;
 }
