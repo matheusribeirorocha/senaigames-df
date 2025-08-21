@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,94 +9,104 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/02.css' %}">
-    
+
 </head>
+
 <body>
+    {% if cards %}
+    {% for chave, valor in cards.items %}
+    <p>ID do Gênero: {{ chave }} - Nome: {{ valor.nome }}</p>
+    {% endfor %}
+    {% endif %}
     <div class="container py-5">
         <div id="particles-js"></div>
         <div class="login-container main-content mx-auto">
-        <div class="cinema-title">Acesso de Membros</div>
-        <div class="cinema-desc">Entre para acessar conteúdos exclusivos do universo <span style="color:#00ffff;text-shadow:0 0 8px #00ffff;">Candango Neural Ascensiony</span>.</div>
-        <form class="login-form" autocomplete="off">
-            <div class="mb-3">
-                <label for="username" class="form-label">Usuário</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu nome de usuário" required>
-                <div class="form-text">Seu nome de usuário é único e pode conter letras e números.</div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com" required>
-                <div class="form-text">Informe um e-mail válido para contato e recuperação de senha.</div>
+            <div class="cinema-title">Acesso de Membros</div>
+            <div class="cinema-desc">Entre para acessar conteúdos exclusivos do universo <span
+                    style="color:#00ffff;text-shadow:0 0 8px #00ffff;">Candango Neural Ascensiony</span>.</div>
+            <form class="login-form" autocomplete="off">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuário</label>
+                    <input type="text" class="form-control" id="username" name="username"
+                        placeholder="Digite seu nome de usuário" required>
+                    <div class="form-text">Seu nome de usuário é único e pode conter letras e números.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com"
+                        required>
+                    <div class="form-text">Informe um e-mail válido para contato e recuperação de senha.</div>
 
-            </div>
-            
-                    
-            <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required minlength="6">
-                <div class="form-text">A senha deve ter pelo menos 6 caracteres.</div>
-            </div>
-            <p>ID do Gênero: {{ chave }} - Nome: {{ valor.nome }}</p>
-                        <select>
-                            {% for chave, valor in cards.items %}
-                            <option> Plataforma</option>
-                            <option> Visual Novel</option>
-                            {% endfor %}
-                        </select>
-            <button type="submit" class="btn btn-cinema w-100">Entrar</button>
-            
-        </form>
-    </div>
-    <!-- Particles.js para efeito de fundo estilo jogo -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {"value": 60, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": ["#00ffff", "#ff00ff", "#ffffff"]},
-                "shape": {"type": "circle"},
-                "opacity": {"value": 0.5, "random": true},
-                "size": {"value": 4, "random": true},
-                "line_linked": {"enable": true, "distance": 120, "color": "#00ffff", "opacity": 0.3, "width": 1},
-                "move": {"enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out"}
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {"enable": true, "mode": "repulse"},
-                    "onclick": {"enable": true, "mode": "push"},
-                    "resize": true
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Digite sua senha" required minlength="6">
+                    <div class="form-text">A senha deve ter pelo menos 6 caracteres.</div>
+                </div>
+                <select>
+                    {% for genero in generos %}
+                    <option value="{{ chave }}">{{ genero.nome }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-cinema w-100">Entrar</button>
+
+            </form>
+        </div>
+        <!-- Particles.js para efeito de fundo estilo jogo -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": ["#00ffff", "#ff00ff", "#ffffff"] },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 4, "random": true },
+                    "line_linked": { "enable": true, "distance": 120, "color": "#00ffff", "opacity": 0.3, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
                 },
-                "modes": {
-                    "repulse": {"distance": 100, "duration": 0.4},
-                    "push": {"particles_nb": 4}
-                }
-            },
-            "retina_detect": true
-        });
-        // Efeito cinematográfico nos campos
-        document.querySelectorAll('.login-form input').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.querySelector('label').style.color = '#ff00ff';
-                this.style.boxShadow = '0 0 16px #ff00ff, 0 0 32px #00ffff';
-                this.style.transition = 'box-shadow 0.3s, background 0.3s';
-                this.style.background = 'rgba(0,255,255,0.12)';
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": { "enable": true, "mode": "repulse" },
+                        "onclick": { "enable": true, "mode": "push" },
+                        "resize": true
+                    },
+                    "modes": {
+                        "repulse": { "distance": 100, "duration": 0.4 },
+                        "push": { "particles_nb": 4 }
+                    }
+                },
+                "retina_detect": true
             });
-            input.addEventListener('blur', function() {
-                this.parentElement.querySelector('label').style.color = '#00ffff';
-                this.style.boxShadow = '';
-                this.style.background = 'rgba(255,255,255,0.07)';
+            // Efeito cinematográfico nos campos
+            document.querySelectorAll('.login-form input').forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.parentElement.querySelector('label').style.color = '#ff00ff';
+                    this.style.boxShadow = '0 0 16px #ff00ff, 0 0 32px #00ffff';
+                    this.style.transition = 'box-shadow 0.3s, background 0.3s';
+                    this.style.background = 'rgba(0,255,255,0.12)';
+                });
+                input.addEventListener('blur', function () {
+                    this.parentElement.querySelector('label').style.color = '#00ffff';
+                    this.style.boxShadow = '';
+                    this.style.background = 'rgba(255,255,255,0.07)';
+                });
             });
-        });
-        // Mensagem de preenchimento
-        document.querySelector('.login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const container = document.querySelector('.login-container');
-            container.innerHTML = `<div class='cinema-title' style='margin-top:60px;'>Bem-vindo ao universo <span style='color:#00ffff;text-shadow:0 0 8px #00ffff;'>Candango Neural Ascension</span>!</div><div class='cinema-desc'>Autenticação simulada.<br>Prepare-se para a experiência!</div>`;
-            setTimeout(()=>window.location.href='index.html', 2500);
-        });
-    </script>
+            // Mensagem de preenchimento
+            document.querySelector('.login-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const container = document.querySelector('.login-container');
+                container.innerHTML = `<div class='cinema-title' style='margin-top:60px;'>Bem-vindo ao universo <span style='color:#00ffff;text-shadow:0 0 8px #00ffff;'>Candango Neural Ascension</span>!</div><div class='cinema-desc'>Autenticação simulada.<br>Prepare-se para a experiência!</div>`;
+                setTimeout(() => window.location.href = 'index.html', 2500);
+            });
+        </script>
 </body>
+
 </html>

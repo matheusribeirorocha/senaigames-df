@@ -85,11 +85,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {
       
       'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'candango',
+            'NAME': 'candango1',
             'USER': 'root',
             'PASSWORD': 'senai@123',
             'HOST': 'localhost',  # Ou o IP do seu servidor MySQL, se não for local
@@ -99,7 +100,7 @@ DATABASES = {
             },
             'test': { # Adicione esta seção para o banco de dados de teste
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'candango_db_test',  # <--- MUITO IMPORTANTE: UM NOME DIFERENTE PARA O BANCO DE DADOS DE TESTE
+            'NAME': 'candango1_test',  # <--- MUITO IMPORTANTE: UM NOME DIFERENTE PARA O BANCO DE DADOS DE TESTE
             'USER': 'root',
             'PASSWORD': 'senai@123',
             'HOST': 'localhost',
